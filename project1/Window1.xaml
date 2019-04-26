@@ -1,4 +1,4 @@
-﻿<Window x:Class="project1.MainWindow"
+﻿<Window x:Class="project1.Window1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project1"
         mc:Ignorable="d"
-        Title="Авторизація" Height="500" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" FontFamily="Segoe UI Emoji">
+      Title="Авторизація" Height="603" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" FontFamily="Segoe UI Emoji">
     <Grid>
         <Rectangle Height="280" VerticalAlignment="Top">
             <Rectangle.Fill>
@@ -18,23 +18,24 @@
             </Rectangle.Fill>
         </Rectangle>
         <Image Source="Photo/Login/home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>
-        <Rectangle Width="280" Fill="White" Margin="35,0,35,100" RadiusX="10" RadiusY="10" Height="240" VerticalAlignment="Bottom">
+        <Rectangle Width="280" Fill="White" Margin="35,160,35,75" RadiusX="10" RadiusY="10">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFBBBBBB" BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Grid Margin="35,0,35,80" Height="240" VerticalAlignment="Bottom">
+        <Grid Margin="35,180,35,220">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="137*"/>
                 <ColumnDefinition Width="143*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Авторизація" VerticalAlignment="TOP" HorizontalAlignment="Center" Foreground="Gray" FontSize="18" Margin="84,5,84,0" Grid.ColumnSpan="2"/>
-            <StackPanel Margin="15,0,15,57" Grid.ColumnSpan="2" Height="124" VerticalAlignment="Bottom">
+            <Label Content="Реєстрація" VerticalAlignment="TOP" HorizontalAlignment="Center" Foreground="Gray" FontSize="18" Margin="84,5,84,0" Grid.ColumnSpan="2"/>
+            <StackPanel Margin="15,59,15,-117" Grid.ColumnSpan="2">
                 <TextBox Name="login" Margin="0,10" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
                 <PasswordBox Name="parol" Margin="0,10" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox Name="tel" Margin="0,10" materialDesign:HintAssist.Hint="Номер телефону" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox Name="email" Margin="0,10" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
             </StackPanel>
         </Grid>
-        <Button Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,50" Content="Увійти" Click="Button_Click"/>
-        <Button Name="Button2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,10" Content="Реєстрація" Click="Button2_Click"/>
+        <Button Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,25" Content="ОК" Click="Button_Click"/>
     </Grid>
 </Window>

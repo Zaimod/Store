@@ -32,8 +32,8 @@ namespace project1.Data
 
         [StringLength(50)]
         public string email { get; set; }
-
-        public int? numberPhone { get; set; }
+        [StringLength(50)]
+        public string numberPhone { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order> orders { get; set; }
