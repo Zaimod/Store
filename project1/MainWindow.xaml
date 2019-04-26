@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:project1"
         mc:Ignorable="d"
         Title="Авторизація" Height="500" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" FontFamily="Segoe UI Emoji">
-    <Grid>
+    <Grid MouseDown="Grid_MouseDown">
         <Rectangle Height="280" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -34,7 +34,7 @@
                 <PasswordBox Name="parol" Margin="0,10" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
             </StackPanel>
         </Grid>
-        <Button Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,50" Content="Увійти" Click="Button_Click"/>
-        <Button Name="Button2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,10" Content="Реєстрація" Click="Button2_Click"/>
+        <Button Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,50" Content="Увійти" Click="Button_Click" Background="#FF2281D1" BorderBrush="#FF2281D1"/>
+        <Button Name="Button2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,10" Content="Реєстрація" Click="Button2_Click" Background="#FF2281D1" BorderBrush="#FF2281D1"/>
     </Grid>
 </Window>

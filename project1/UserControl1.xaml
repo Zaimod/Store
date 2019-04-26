@@ -1,0 +1,30 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:project1" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:Data="clr-namespace:project1.Data" x:Class="project1.UserControl1"
+             mc:Ignorable="d"
+             Height="auto" Width="auto">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TransitionInContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <StackPanel>
+                    <StackPanel Margin="10">
+                        <TextBlock x:Name="Price" Text="$1299" FontSize="50" FontFamily="Cooper Black" Foreground="#FFC00000"/>
+                        <TextBlock x:Name="Title"  Text="Nvidia Geforce rtx 2080ti" FontSize="20" FontFamily="Champagne &amp; Limousines" Margin="5"/>
+                        <TextBlock x:Name="Desc" FontSize="18" Width="250" FontFamily="Champagne &amp; Limousines" Margin="5" TextWrapping="Wrap">
+                            Нова флагманська відеокарта NVIDIA - це революційний рівень продуктивності і реалізму в іграх. 
+                        Потужна архітектура NVIDIA Tu-ring™, інноваційні технології та 11 ГБ ультрашвидкісна пам'яті нового покоління GDDR6 
+                        роблять її кра-щою в світі ігровою відеокартою.
+                        </TextBlock>                        
+                    </StackPanel>
+                    <Button FontFamily="Champagne &amp; Limousines" Content="Купити" FontSize="18" Margin="25" Background="#FF2281D1" BorderBrush="#FF2281D1"/>
+                </StackPanel>
+                <Image Margin="10" Width="500" Height="450" Source="Photo/VideoCard/Nvidia/rtx2080ti.png" Stretch="UniformToFill"/>
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

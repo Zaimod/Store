@@ -35,13 +35,33 @@ namespace project1
                     db.Users.Add(user);
                     db.SaveChanges();
                     BespokeFusion.MaterialMessageBox.Show("Вітаємо!");
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
                     this.Close();
+                    
                     
                 }
                 else
                 {
                     BespokeFusion.MaterialMessageBox.ShowError("Введіть правильні дані!");
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                    
                 }
+            }
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Tel_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
             }
         }
     }

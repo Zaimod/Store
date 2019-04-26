@@ -43,13 +43,15 @@ namespace project1
                         flag = true;
                         IdUsers = i.Id;
                         IsAdmin = i.isAdmin.Value;
-                        BespokeFusion.MaterialMessageBox.Show("Вітаємо");
+                        Window2 window2 = new Window2();
+                        window2.Show();
+                        this.Close();
                         break;
                     }
                 }
-                if (flag == false)
+                if(flag == false)
                 {
-                    BespokeFusion.MaterialMessageBox.ShowError("Невірний логін чи пароль!");
+                     BespokeFusion.MaterialMessageBox.ShowError("Невірний логін чи пароль!");                   
                 }
             }
         }
@@ -58,6 +60,12 @@ namespace project1
         {
             Window1 window1 = new Window1();
             window1.Show();
+            this.Close();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }
