@@ -16,7 +16,7 @@
                         <TextBlock x:Name="Title"  Text="Nvidia Geforce rtx 2080ti" FontSize="20" FontFamily="Champagne &amp; Limousines" Margin="5"/>
                         <Image x:Name="imagespecvideo" Margin="10" Width="300" Stretch="UniformToFill"/>
                     </StackPanel>
-                    <Button FontFamily="Champagne &amp; Limousines" Content="Купити" FontSize="18" Margin="25" Background="#FF2281D1" BorderBrush="#FF2281D1"/>
+                    <Button x:Name="Buy" FontFamily="Champagne &amp; Limousines" Content="Купити" FontSize="18" Margin="25" Background="#FF2281D1" BorderBrush="#FF2281D1" Click="Buy_Click"/>
                 </StackPanel>
                 <Image x:Name="ImageVideo" Margin="10" Width="450" Height="320" Stretch="Uniform"/>
 

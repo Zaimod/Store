@@ -30,10 +30,10 @@
             </Grid.ColumnDefinitions>
             <Label Content="Реєстрація" VerticalAlignment="TOP" HorizontalAlignment="Center" Foreground="Gray" FontSize="18" Margin="84,5,84,0" Grid.ColumnSpan="2"/>
             <StackPanel Margin="15,59,15,-117" Grid.ColumnSpan="2">
-                <TextBox Name="login" Margin="0,10" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
-                <PasswordBox Name="parol" Margin="0,10" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
-                <TextBox Name="tel" Margin="0,10" materialDesign:HintAssist.Hint="Номер телефону" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" PreviewTextInput="Tel_PreviewTextInput"/>
-                <TextBox Name="email" Margin="0,10" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox Name="login" Margin="0,10" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" CaretBrush="#FF2281D1" BorderBrush="#FF2281D1"/>
+                <PasswordBox Name="parol" Margin="0,10" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" CaretBrush="#FF2281D1" BorderBrush="#FF2281D1"/>
+                <TextBox Name="tel" Margin="0,10" materialDesign:HintAssist.Hint="Номер телефону" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" PreviewTextInput="Tel_PreviewTextInput" CaretBrush="#FF2281D1" BorderBrush="#FF2281D1"/>
+                <TextBox Name="email" Margin="0,10" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" CaretBrush="#FF2281D1" BorderBrush="#FF2281D1"/>
             </StackPanel>
         </Grid>
         <Button Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,25" Content="ОК" Click="Button_Click" Background="#FF2281D1" BorderBrush="#FF2281D1"/>

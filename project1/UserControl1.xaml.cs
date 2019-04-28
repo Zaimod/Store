@@ -15,13 +15,20 @@ using System.Windows.Shapes;
 using System.Data.Entity;
 using project1.Data.Context;
 using project1.Data;
+using project1;
 namespace project1
 {
     /// <summary>
     /// Логика взаимодействия для UserControl1.xaml
     /// </summary>
+    /// 
+
     public partial class UserControl1
     {
+        public int IdUsers;
+        public bool IsAdmin;
+        int id = 0;
+        double price = 0f;
         public UserControl1()
         {            
             InitializeComponent();
@@ -32,11 +39,27 @@ namespace project1
                 {
                     if(i.title == "NVIDIA GeForce RTX 2080 Ti")
                     {
+                        id = i.Id;
                         Price.Text = "$" + i.price.ToString();
                         Title.Text = i.title;
+                        price = Convert.ToDouble(i.price);
                     }
                 }
+                
             }
+           
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (Model1 db = new Model1())
+            {
+                order order = new order { user_id = IdUsers, prod_id = id, price = price, qty = 1, dateTime = DateTime.Now };
+                db.orders.Add(order);
+                db.SaveChanges();
+                BespokeFusion.MaterialMessageBox.Show("Добавлено в корзину!");
+            }
+            
         }
     }
 }

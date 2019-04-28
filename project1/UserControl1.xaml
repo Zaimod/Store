@@ -21,7 +21,7 @@
                         роблять її кра-щою в світі ігровою відеокартою.
                         </TextBlock>                        
                     </StackPanel>
-                    <Button FontFamily="Champagne &amp; Limousines" Content="Купити" FontSize="18" Margin="25" Background="#FF2281D1" BorderBrush="#FF2281D1"/>
+                    <Button FontFamily="Champagne &amp; Limousines" Content="Купити" FontSize="18" Margin="25" Background="#FF2281D1" BorderBrush="#FF2281D1" Click="Button_Click"/>
                 </StackPanel>
                 <Image Margin="10" Width="500" Height="450" Source="Photo/VideoCard/Nvidia/rtx2080ti.png" Stretch="UniformToFill"/>
             </StackPanel>

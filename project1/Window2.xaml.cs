@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using project1.Data.Context;
+using project1.Data;
 namespace project1
 {
     /// <summary>
@@ -19,11 +20,24 @@ namespace project1
     /// </summary>
     public partial class Window2 : Window
     {
+        
+        public int IdUsers = 0;
+        public bool IsAdmin = false;
+        public string phoneNumber = "";
+
+        UserControl1 Control1 = new UserControl1();
+        UserControl2 Control2 = new UserControl2();
+        UserControl3 Control3 = new UserControl3();
+
         public Window2()
-        {
+        {            
             InitializeComponent();
             GridPrincipal.Children.Clear();
-            GridPrincipal.Children.Add(new UserControl1());
+            Control1.IdUsers = IdUsers;
+            Control1.IsAdmin = IsAdmin;
+            GridPrincipal.Children.Add(Control1);
+
+            
         }
 
         private void ButtonOff_Click(object sender, RoutedEventArgs e)
@@ -45,11 +59,22 @@ namespace project1
             {
                 case 0:                
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControl1());
+                    Control1.IdUsers = IdUsers;
+                    Control1.IsAdmin = IsAdmin;
+                    GridPrincipal.Children.Add(Control1);
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControl2());
+                    Control2.IdUsers = IdUsers;
+                    Control2.IsAdmin = IsAdmin;
+                    GridPrincipal.Children.Add(Control2);
+                    break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    Control3.IdUsers = IdUsers;
+                    Control3.IsAdmin = IsAdmin;
+                    Control3.phoneNumber = phoneNumber;
+                    GridPrincipal.Children.Add(Control3);
                     break;
                 default:
                     break;

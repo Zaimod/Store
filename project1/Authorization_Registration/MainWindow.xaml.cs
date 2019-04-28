@@ -20,10 +20,13 @@ namespace project1
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    /// 
+    
     public partial class MainWindow : Window
     {
         public int IdUsers = 0;
         public bool IsAdmin = false;
+        public string phoneNumber = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -43,7 +46,13 @@ namespace project1
                         flag = true;
                         IdUsers = i.Id;
                         IsAdmin = i.isAdmin.Value;
-                        Window2 window2 = new Window2();
+                        phoneNumber = i.numberPhone;
+                        Window2 window2 = new Window2
+                        {
+                            IdUsers = IdUsers,
+                            IsAdmin = IsAdmin,
+                            phoneNumber = phoneNumber
+                        };
                         window2.Show();
                         this.Close();
                         break;

@@ -37,13 +37,13 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        
+
         <Grid Margin="250 55 0 0">
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        
+
         <Grid Width="250" HorizontalAlignment="Left" Background="#FF222222">
-            <materialDesign:TransitioningContent x:Name="TransitionInContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
+            <materialDesign:TransitioningContent x:Name="TransitionInContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}" HorizontalAlignment="Left" Width="250">
                 <Grid x:Name="GridCursor" Margin="0 100 0 0" Background="#FF0069C0" Width="10" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"></Grid>
             </materialDesign:TransitioningContent>
             <ListView x:Name="ListViewMenu" Margin="0 100" Foreground="LightGray" FontFamily="Champagne &amp; Limousines"  FontSize="26" SelectionChanged="ListViewMenu_SelectionChanged">
@@ -55,6 +55,7 @@
                 </ListViewItem>
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
+
                         <materialDesign:PackIcon Kind="Monitor" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Відеокарти" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>

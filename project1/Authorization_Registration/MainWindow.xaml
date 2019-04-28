@@ -17,7 +17,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Source="Photo/Login/home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>
+        <Image Source ="Photo\Login\home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>
         <Rectangle Width="280" Fill="White" Margin="35,0,35,100" RadiusX="10" RadiusY="10" Height="240" VerticalAlignment="Bottom">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFBBBBBB" BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1"/>
@@ -30,8 +30,8 @@
             </Grid.ColumnDefinitions>
             <Label Content="Авторизація" VerticalAlignment="TOP" HorizontalAlignment="Center" Foreground="Gray" FontSize="18" Margin="84,5,84,0" Grid.ColumnSpan="2"/>
             <StackPanel Margin="15,0,15,57" Grid.ColumnSpan="2" Height="124" VerticalAlignment="Bottom">
-                <TextBox Name="login" Margin="0,10" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
-                <PasswordBox Name="parol" Margin="0,10" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox Name="login" Margin="0,10" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" CaretBrush="#FF2281D1" BorderBrush="#FF2281D1"/>
+                <PasswordBox Name="parol" Margin="0,10" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" CaretBrush="#FF2281D1" BorderBrush="#FF2281D1"/>
             </StackPanel>
         </Grid>
         <Button Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,50" Content="Увійти" Click="Button_Click" Background="#FF2281D1" BorderBrush="#FF2281D1"/>
