@@ -146,75 +146,82 @@ namespace project1
 
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
-            BespokeFusion.MaterialMessageBox.Show("Вам надіслано смс");
-
-            string t1 = "";
-            string t = "Vash zakaz pruinyato" + "\n" + "Do splatu: " + sum.ToString() + "$\n";
-
-            for (int i = 0; i < listBox.Items.Count; i++)
+            if (listBox.Items.Count == 0 || listBox.Items[0].ToString() == "Кошик порожній")
             {
-                t1 += i + 1 + ". " + listBox.Items[i] + "\n";
+                BespokeFusion.MaterialMessageBox.ShowError("Кошик порожній");
             }
-            t1 += $"Vash zakaz pruinyato\nDo splatu: {sum.ToString()}$\n";
-
-            /*
-            var client = new Client(creds: new Nexmo.Api.Request.Credentials
+            else
             {
-                ApiKey = "31bbd8d7",
-                ApiSecret = "fRWvlac5j3ZMKn6H"
-            });
-            var results = client.SMS.Send(request: new SMS.SMSRequest
-            {
-                from = "Project",
-                to = phoneNumber,
-                text = t
-            });
-            */
+                BespokeFusion.MaterialMessageBox.Show("Вам надіслано смс");
 
-            /*
-            try
-            {
-                MailMessage message = new MailMessage();
-                message.Subject = "Zakaz####";
-                message.From = new MailAddress("ivashchuk67@gmail.com");
-                message.Body = t1;
-                message.To.Add("ivashchuk65@gmail.com");
+                string t1 = "";
+                string t = "Vash zakaz pruinyato" + "\n" + "Do splatu: " + sum.ToString() + "$\n";
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com")
+                for (int i = 0; i < listBox.Items.Count; i++)
                 {
-                    Credentials = new NetworkCredential("ivashchuk67@gmail.com", "Vv18052000"),
-                    EnableSsl = true,
-                    Port = 587
-                };
-                smtp.Send(message);
-            }
-            catch(Exception ex)
-            {
-                BespokeFusion.MaterialMessageBox.ShowError(ex.Message);
-            }
-            */
-            int price = 0;
-            Tovar tovar = new Videokarta();
-            
-            string tb = "";
-            for (int i = 0; i < listBox.Items.Count; i++)
-            {
-                if (listBox.Items[i].ToString().Substring(0, 6) == "NVIDIA")
-                {
-                    tovar = new NvidiaVideokarta(tovar);
-                    tb = listBox.Items[i].ToString().Substring(0, listBox.Items[i].ToString().IndexOf("  "));
-
-                    price += tovar.GetCost(tb);
+                    t1 += i + 1 + ". " + listBox.Items[i] + "\n";
                 }
-                else if(listBox.Items[i].ToString().Substring(0, 3) == "AMD")
-                {
-                    tovar = new AMDVideokarta(tovar);
-                    tb = listBox.Items[i].ToString().Substring(0, listBox.Items[i].ToString().IndexOf("  "));
+                t1 += $"Vash zakaz pruinyato\nDo splatu: {sum.ToString()}$\n";
 
-                    price += tovar.GetCost(tb);
+                /*
+                var client = new Client(creds: new Nexmo.Api.Request.Credentials
+                {
+                    ApiKey = "31bbd8d7",
+                    ApiSecret = "fRWvlac5j3ZMKn6H"
+                });
+                var results = client.SMS.Send(request: new SMS.SMSRequest
+                {
+                    from = "Project",
+                    to = phoneNumber,
+                    text = t
+                });
+                */
+
+                /*
+                try
+                {
+                    MailMessage message = new MailMessage();
+                    message.Subject = "Zakaz####";
+                    message.From = new MailAddress("ivashchuk67@gmail.com");
+                    message.Body = t1;
+                    message.To.Add("ivashchuk65@gmail.com");
+
+                    SmtpClient smtp = new SmtpClient("smtp.gmail.com")
+                    {
+                        Credentials = new NetworkCredential("ivashchuk67@gmail.com", "Vv18052000"),
+                        EnableSsl = true,
+                        Port = 587
+                    };
+                    smtp.Send(message);
                 }
+                catch(Exception ex)
+                {
+                    BespokeFusion.MaterialMessageBox.ShowError(ex.Message);
+                }
+                */
+                int price = 0;
+                Tovar tovar = new Videokarta();
+
+                string tb = "";
+                for (int i = 0; i < listBox.Items.Count; i++)
+                {
+                    if (listBox.Items[i].ToString().Substring(0, 6) == "NVIDIA")
+                    {
+                        tovar = new NvidiaVideokarta(tovar);
+                        tb = listBox.Items[i].ToString().Substring(0, listBox.Items[i].ToString().IndexOf("  "));
+
+                        price += tovar.GetCost(tb);
+                    }
+                    else if (listBox.Items[i].ToString().Substring(0, 3) == "AMD")
+                    {
+                        tovar = new AMDVideokarta(tovar);
+                        tb = listBox.Items[i].ToString().Substring(0, listBox.Items[i].ToString().IndexOf("  "));
+
+                        price += tovar.GetCost(tb);
+                    }
+                }
+                textBox.Text = price.ToString();
             }
-            textBox.Text = price.ToString();
         }
     }
 }

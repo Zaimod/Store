@@ -12,31 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.Entity;
+
 using project1.Data.Context;
 using project1.Data;
 namespace project1
 {
     /// <summary>
-    /// Логика взаимодействия для UserControl2.xaml
+    /// Логика взаимодействия для Processors.xaml
     /// </summary>
-    public partial class UserControl2
+    public partial class Processors
     {
         public int IdUsers = 0;
         public bool IsAdmin = false;
         int id = 0;
         double price = 0f;
 
-        int temp = 1;
-        public UserControl2()
+        int temp = 16;
+        public Processors()
         {
             InitializeComponent();
             using (Model1 db = new Model1())
-            {               
+            {
                 var prod = db.products;
                 foreach (var i in prod)
                 {
-                    if (i.title == "NVIDIA GeForce RTX 2080 Ti")
+                    if (i.title == "Intel Core i9-9900K")
                     {
                         Price.Text = "$" + i.price.ToString();
                         price = Convert.ToDouble(i.price);
@@ -51,15 +51,13 @@ namespace project1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
             using (Model1 db = new Model1())
             {
                 temp++;
                 var idNumber = db.products.Count();
-                var prod = db.products;
+                var prod = db.products.Where(p => p.cat_id == 1);
                 foreach (var i in prod)
                 {
-                    
                     if (i.Id == temp)
                     {
                         Price.Text = "$" + i.price.ToString();
@@ -68,8 +66,8 @@ namespace project1
                         ImageVideo.Source = new BitmapImage(new Uri(i.image));
                         imagespecvideo.Source = new BitmapImage(new Uri(i.description));
                         id = i.Id;
-                        if (temp == 17)
-                            temp = 0;
+                        if (temp == idNumber)
+                            temp = 15;
                     }
                 }
             }
@@ -81,10 +79,10 @@ namespace project1
             {
                 temp++;
                 var idNumber = db.products.Count();
-                var prod = db.products;
+                var prod = db.products.Where(p => p.cat_id == 1);
                 foreach (var i in prod.OrderByDescending(u => u.Id))
                 {
-                    if (i.Id == temp && i.cat_id == 2)
+                    if (i.Id == temp)
                     {
                         id = i.Id;
                         price = Convert.ToDouble(i.price);
@@ -92,8 +90,8 @@ namespace project1
                         Title.Text = i.title;
                         ImageVideo.Source = new BitmapImage(new Uri(i.image));
                         imagespecvideo.Source = new BitmapImage(new Uri(i.description));
-                        if (temp == 17)
-                            temp = 0;
+                        if (temp == idNumber)
+                            temp = 15;
                     }
                 }
             }

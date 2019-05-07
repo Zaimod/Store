@@ -454,6 +454,9 @@
     <Compile Include="Decorator\Tovar.cs" />
     <Compile Include="Decorator\TovarDecorator.cs" />
     <Compile Include="Decorator\Videokarta.cs" />
+    <Compile Include="Processors.xaml.cs">
+      <DependentUpon>Processors.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl.xaml.cs">
       <DependentUpon>UserControl.xaml</DependentUpon>
     </Compile>
@@ -472,7 +475,7 @@
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
-    <Page Include="Authorization_Registration\MainWindow.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -486,10 +489,14 @@
     <Compile Include="Data\product.cs" />
     <Compile Include="Data\sysdiagram.cs" />
     <Compile Include="Data\User.cs" />
-    <Compile Include="Authorization_Registration\MainWindow.xaml.cs">
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Processors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -549,9 +556,6 @@
     <Resource Include="Photo\VideoCard\Nvidia\rtx2080ti.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photo\Processor\Intel\i3_8100.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Photo\VideoCard\Nvidia\2080ti.png" />
   </ItemGroup>
   <ItemGroup>
@@ -576,6 +580,15 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Authorization_Registration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photo\Processor\Intel\i7-9700k.png" />
+    <Resource Include="Photo\Processor\Intel\i9-9900k.png" />
+    <Resource Include="Photo\Processor\Intel\Intel_i7-9700k.png" />
+    <Resource Include="Photo\Processor\Intel\Intel_i9-9900k.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

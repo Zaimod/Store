@@ -19,11 +19,11 @@
                             Нова флагманська відеокарта NVIDIA - це революційний рівень продуктивності і реалізму в іграх. 
                         Потужна архітектура NVIDIA Tu-ring™, інноваційні технології та 11 ГБ ультрашвидкісна пам'яті нового покоління GDDR6 
                         роблять її кра-щою в світі ігровою відеокартою.
-                        </TextBlock>                        
+                        </TextBlock>
                     </StackPanel>
                     <Button FontFamily="Champagne &amp; Limousines" Content="Купити" FontSize="18" Margin="25" Background="#FF2281D1" BorderBrush="#FF2281D1" Click="Button_Click"/>
                 </StackPanel>
-                <Image Margin="10" Width="500" Height="450" Source="Photo/VideoCard/Nvidia/rtx2080ti.png" Stretch="UniformToFill"/>
+                <Image Margin="10" Width="740" Height="501" Source="Photo/VideoCard/Nvidia/rtx2080ti.png" Stretch="UniformToFill"/>
             </StackPanel>
         </materialDesign:TransitioningContent>
     </Grid>

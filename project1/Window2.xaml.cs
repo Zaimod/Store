@@ -20,7 +20,7 @@ namespace project1
     /// </summary>
     public partial class Window2 : Window
     {
-        
+
         public int IdUsers = 0;
         public bool IsAdmin = false;
         public string phoneNumber = "";
@@ -28,16 +28,16 @@ namespace project1
         UserControl1 Control1 = new UserControl1();
         UserControl2 Control2 = new UserControl2();
         UserControl3 Control3 = new UserControl3();
-
+        Processors processors = new Processors();
         public Window2()
-        {            
+        {
             InitializeComponent();
             GridPrincipal.Children.Clear();
             Control1.IdUsers = IdUsers;
             Control1.IsAdmin = IsAdmin;
             GridPrincipal.Children.Add(Control1);
 
-            
+
         }
 
         private void ButtonOff_Click(object sender, RoutedEventArgs e)
@@ -57,7 +57,7 @@ namespace project1
 
             switch (index)
             {
-                case 0:                
+                case 0:
                     GridPrincipal.Children.Clear();
                     Control1.IdUsers = IdUsers;
                     Control1.IsAdmin = IsAdmin;
@@ -68,6 +68,12 @@ namespace project1
                     Control2.IdUsers = IdUsers;
                     Control2.IsAdmin = IsAdmin;
                     GridPrincipal.Children.Add(Control2);
+                    break;
+                case 2:
+                    GridPrincipal.Children.Clear();
+                    processors.IdUsers = IdUsers;
+                    processors.IsAdmin = IsAdmin;
+                    GridPrincipal.Children.Add(processors);
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
@@ -86,5 +92,9 @@ namespace project1
             TransitionInContentSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
         }
+
+        private void Facebook_button_Click(object sender, RoutedEventArgs e) => System.Diagnostics.Process.Start("https://www.facebook.com/profile.php?id=100008414769152");
+        private void Instagram_button_Click(object sender, RoutedEventArgs e) => System.Diagnostics.Process.Start("https://www.instagram.com/oleghka12/?hl=uk");
+        private void Twitter_button_Click(object sender, RoutedEventArgs e) => System.Diagnostics.Process.Start("https://twitter.com/vlad_ivashchuk");
     }
 }
