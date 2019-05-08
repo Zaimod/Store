@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
-        Title="Window1" Height="720" Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+        Title="Window1" Height="720" Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:projectDataSet x:Key="projectDataSet"/>
+        <CollectionViewSource x:Key="productsViewSource" Source="{Binding products, Source={StaticResource projectDataSet}}"/>
+    </Window.Resources>
     <Grid Background="#FFEEEEEE" MouseDown="Grid_MouseDown">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#FF0069C0" Height="10"/>
@@ -25,8 +29,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
-                    <Button Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray"/>
-                    <Button Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray" Margin="0 0 10 0">
+                    <Button x:Name="Settings" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray" Margin="0 0 10 0" Click="Settings_Click">
                         <materialDesign:PackIcon Kind="Settings"/>
                     </Button>
                     <Button x:Name="ButtonOff" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray" Click="ButtonOff_Click">
@@ -36,7 +39,7 @@
             </Grid>
         </StackPanel>
 
-        <Grid Margin="250 55 0 0">
+        <Grid Margin="250 55 0 0" DataContext="{StaticResource productsViewSource}">
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
 

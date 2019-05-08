@@ -36,8 +36,6 @@ namespace project1
             Control1.IdUsers = IdUsers;
             Control1.IsAdmin = IsAdmin;
             GridPrincipal.Children.Add(Control1);
-
-
         }
 
         private void ButtonOff_Click(object sender, RoutedEventArgs e)
@@ -96,5 +94,22 @@ namespace project1
         private void Facebook_button_Click(object sender, RoutedEventArgs e) => System.Diagnostics.Process.Start("https://www.facebook.com/profile.php?id=100008414769152");
         private void Instagram_button_Click(object sender, RoutedEventArgs e) => System.Diagnostics.Process.Start("https://www.instagram.com/oleghka12/?hl=uk");
         private void Twitter_button_Click(object sender, RoutedEventArgs e) => System.Diagnostics.Process.Start("https://twitter.com/vlad_ivashchuk");
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            projectDataSet projectDataSet = (projectDataSet)FindResource("projectDataSet");
+            // Загрузить данные в таблицу products. Можно изменить этот код как требуется.
+            projectDataSetTableAdapters.productsTableAdapter projectDataSetproductsTableAdapter = new projectDataSetTableAdapters.productsTableAdapter();
+            _ = projectDataSetproductsTableAdapter.Fill(projectDataSet.products);
+            CollectionViewSource productsViewSource = (CollectionViewSource)FindResource("productsViewSource");
+            _ = productsViewSource.View.MoveCurrentToFirst();
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsBase settingsBase = new SettingsBase();
+            settingsBase.Show();
+        }
     }
 }

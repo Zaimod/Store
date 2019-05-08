@@ -34,6 +34,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-онлайн-магазин-32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BespokeFusion, Version=1.0.1.10, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialMessageBox.1.0.0.11\lib\BespokeFusion.dll</HintPath>
@@ -286,6 +293,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
       <Private>True</Private>
@@ -408,6 +416,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -457,6 +466,17 @@
     <Compile Include="Processors.xaml.cs">
       <DependentUpon>Processors.xaml</DependentUpon>
     </Compile>
+    <Compile Include="projectDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projectDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsBase.xaml.cs">
+      <DependentUpon>SettingsBase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl.xaml.cs">
       <DependentUpon>UserControl.xaml</DependentUpon>
     </Compile>
@@ -494,6 +514,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Processors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -541,6 +569,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="projectDataSet.xsc">
+      <DependentUpon>projectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="projectDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projectDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projectDataSet.xss">
+      <DependentUpon>projectDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -589,6 +628,12 @@
     <Resource Include="Photo\Processor\Intel\i9-9900k.png" />
     <Resource Include="Photo\Processor\Intel\Intel_i7-9700k.png" />
     <Resource Include="Photo\Processor\Intel\Intel_i9-9900k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-интернет-магазин-64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-онлайн-магазин-32.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
