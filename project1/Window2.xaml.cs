@@ -108,8 +108,13 @@ namespace project1
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            SettingsBase settingsBase = new SettingsBase();
-            settingsBase.Show();
+            if (IsAdmin == true)
+            {
+                SettingsBase settingsBase = new SettingsBase();
+                settingsBase.Show();
+            }
+            else
+                BespokeFusion.MaterialMessageBox.ShowError("Ви не адмін");
         }
     }
 }

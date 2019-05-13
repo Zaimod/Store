@@ -477,6 +477,8 @@
     <Compile Include="SettingsBase.xaml.cs">
       <DependentUpon>SettingsBase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Singleton\Program.cs" />
+    <Compile Include="Singleton\User.cs" />
     <Compile Include="UserControl.xaml.cs">
       <DependentUpon>UserControl.xaml</DependentUpon>
     </Compile>

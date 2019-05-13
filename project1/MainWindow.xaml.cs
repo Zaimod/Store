@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using project1.Data.Context;
 using project1.Data;
-
+using project1.Singleton;
 namespace project1
 {
     /// <summary>
@@ -47,6 +47,10 @@ namespace project1
                         IdUsers = i.Id;
                         IsAdmin = i.isAdmin.Value;
                         phoneNumber = i.numberPhone;
+
+                        UserOnly user = new UserOnly();
+                        user.Launch(login.Text + " " + parol.Password);
+
                         Window2 window2 = new Window2
                         {
                             IdUsers = IdUsers,
@@ -54,7 +58,7 @@ namespace project1
                             phoneNumber = phoneNumber
                         };
                         window2.Show();
-                        this.Close();
+                        Close();
                         break;
                     }
                 }
